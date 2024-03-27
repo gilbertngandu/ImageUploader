@@ -29,6 +29,7 @@ This project includes examples of how to integrate with the following API:
   - Dependency injection
   - OpenApi with Swagger
   - Artificial Intelligence with Google Cloud Vision
+  - Unit Test
 
 **Dependencies**
 - Azure Cosmos NoSQL DB https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/quickstart-portal
