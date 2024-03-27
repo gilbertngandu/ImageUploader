@@ -29,3 +29,12 @@ This project includes examples of how to integrate with the following API:
   - Dependency injection
   - OpenApi with Swagger
   - Artificial Intelligence with Google Cloud Vision
+
+**Dependencies**
+- Azure Cosmos NoSQL DB https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/quickstart-portal
+- Azure Emulator can be used locally (https://learn.microsoft.com/en-us/azure/cosmos-db/how-to-develop-emulator?tabs=windows%2Ccsharp&pivots=api-nosql)
+- Google Credentials https://developers.google.com/workspace/guides/create-credentials
+- Cloudinary: Register and get the cloudniary Url that looks like cloudinary://7474747474747gilbertngandu ([)](https://cloudinary.com/users/register_free)https://cloudinary.com/users/register_free
+- Setup an application in Azure, https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app
+
+Contact me at https://www.linkedin.com/in/gilbert-ngandu-software-developer/
