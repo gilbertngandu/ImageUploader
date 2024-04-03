@@ -1,4 +1,5 @@
 using Asp.Versioning;
+using ImageUpload.Api.Extensions;
 using ImageUpload.Api.Registration;
 using ImageUploader.Common.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -30,18 +31,13 @@ var loggerFactory = LoggerFactory.Create(logging =>
 services.AddSingleton(loggerFactory);
 services.AddLogging();
 
-// Add services to the container.
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddMicrosoftIdentityWebApi(azureConfig,
     subscribeToJwtBearerMiddlewareDiagnosticsEvents: true);
-
-builder.Services.AddControllers();
-
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddAuthorization();
-
+services.AddControllers();
+services.AddEndpointsApiExplorer();
+services.AddSwaggerGen();
+services.AddAuthorization();
 services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = ApiName, Version = "v1" });
@@ -86,9 +82,7 @@ services.AddApiVersioning(options =>
     options.DefaultApiVersion = new ApiVersion(1);
     options.ReportApiVersions = true;
 }).AddMvc();
-
-DiRegistration.RegisterDependencies(services, config);
-
+services.RegisterDependencies(config);
 var app = builder.Build();
 
 //app.UseRateLimit(10);
